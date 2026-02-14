@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Валентинка 💗</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg1: #ffd9e8;
@@ -105,14 +107,20 @@
       box-shadow: 0 10px 20px rgba(230, 117, 162, .17);
     }
 
-    .title {
-      margin: 0;
-      font-size: clamp(1.45rem, 3vw, 2.4rem);
-      line-height: 1.2;
-      letter-spacing: 0.3px;
-      text-wrap: balance;
-    }
+   .title {
+    margin: 0;
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #c94f87;
 
+    /* убираем фиксированный shadow — он мешает видеть анимацию */
+    animation: titleGlow 2.6s ease-in-out infinite alternate;
+    will-change: text-shadow, transform;
+  }
+
+    
     .photo-grid {
       margin-top: 16px;
       display: grid;
@@ -487,6 +495,16 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-8px); }
     }
+    @keyframes titleGlow {
+  0% {
+    text-shadow: 0 2px 8px rgba(201,79,135,.15);
+    transform: translateY(0);
+  }
+  100% {
+    text-shadow: 0 10px 26px rgba(201,79,135,.55);
+    transform: translateY(-2px);
+  }
+}
 
     @keyframes jelly {
       0% { transform: scale(.94); }
@@ -566,7 +584,7 @@
     <section class="home-card">
       <div class="question-stack">
         <div class="question-card">
-          <h1 class="title">Будешь ли ты моей валентинкой?</h1>
+          <h1 class="title">Would you be my valentine?</h1>
         </div>
       </div>
 
@@ -577,7 +595,7 @@
               <img class="js-fallback" src="assets/girl1.jpeg" data-fallback="Фото 1" alt="Фото 1" />
             </div>
             <div class="flip-back">
-              Ты — самое красивое, что со мной случалось 💗
+              You are the most beautiful thing that has ever happened to me 💗
             </div>
           </div>
         </div>
@@ -588,7 +606,7 @@
               <img class="js-fallback" src="assets/girl2.jpeg" data-fallback="Фото 2" alt="Фото 2" />
             </div>
             <div class="flip-back">
-              Я улыбаюсь каждый раз, когда думаю о тебе ✨
+              I smile every time I think of you ✨
             </div>
           </div>
         </div>
@@ -599,7 +617,7 @@
               <img class="js-fallback" src="assets/girl3.jpeg" data-fallback="Фото 3" alt="Фото 3" />
             </div>
             <div class="flip-back">
-              Ты делаешь мой мир ярче 🌸
+              You are my meaning and my world. 🌸
             </div>
           </div>
         </div>
@@ -610,7 +628,7 @@
               <img class="js-fallback" src="assets/girl4.jpeg" data-fallback="Фото 4" alt="Фото 4" />
             </div>
             <div class="flip-back">
-              И я хочу быть рядом с тобой всегда 🫶
+              And I want to be by your side always 🫶
             </div>
           </div>
         </div>
@@ -619,16 +637,16 @@
 
 
       <div class="actions" id="actions">
-        <button id="yesBtn" class="btn btn-yes" aria-label="Ответить Да">Да</button>
-        <button id="noBtn" class="btn btn-no" aria-label="Ответить Нет">Нет</button>
+        <button id="yesBtn" class="btn btn-yes" aria-label="Ответить Да">Yes</button>
+        <button id="noBtn" class="btn btn-no" aria-label="Ответить Нет">No</button>
       </div>
 
-      <p class="hint">Выбирай сердцем 💗</p>
+      <p class="hint">You still have no choice 💗</p>
     </section>
   </main>
 
   <section id="celebrateScreen" class="screen celebrate hidden" aria-live="polite">
-    <h2>УРАААА Я ТАК СЧАСТЛИВ &lt;3</h2>
+    <h2>Yesss! Now check the envelope💗</h2>
     <div class="cats-wrap cats-wrap-4">
       <img class="js-fallback" src="assets/cat1.png" data-fallback="Cat 1" alt="Cat 1" />
       <img class="js-fallback" src="assets/cat2.png" data-fallback="Cat 2" alt="Cat 2" />
@@ -645,9 +663,28 @@
         <div class="letter-content">
           <h3>My Love 💗</h3>
           <p>
+            Дорогая Нурдана,
+
+            Я люблю тебя сильнее, чем могу выразить словами.
+            Ты стала не просто частью моей жизни — ты стала её смыслом, её светом и её теплом.
+            С тобой даже самые обычные дни превращаются в особенные.
+
             Ты делаешь мою жизнь ярче, теплее и счастливее.
-            Спасибо тебе за твою улыбку, за твою нежность
-            и за то, что ты просто есть.
+            Спасибо тебе за твою улыбку, которая способна развеять любые тревоги.
+            Спасибо за твою нежность, за твою заботу, за то, как ты смотришь на меня — в этот момент я чувствую себя самым счастливым человеком на земле.
+
+            С тобой я учусь любить глубже, ценить больше и мечтать смелее.
+            Мне хочется держать тебя за руку, смеяться с тобой до слёз, делиться самыми сокровенными мыслями и быть рядом всегда — в радости и в трудные моменты.
+
+            Я хочу строить с тобой будущее.
+            Хочу просыпаться рядом, поддерживать тебя, вдохновлять и защищать.
+            Хочу, чтобы ты всегда чувствовала, насколько ты важна для меня.
+
+            Ты — мой покой и моя буря, моя улыбка и моё вдохновение.
+            И если бы мне пришлось выбирать снова, я бы каждый раз выбирал тебя.
+
+            С любовью и бесконечной благодарностью,
+            твой самый счастливый человек 💌
           </p>
           <p>
             Я хочу держать тебя за руку,
