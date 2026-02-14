@@ -278,6 +278,85 @@
     .flip-card:nth-child(3) { animation-delay: .7s; }
     .flip-card:nth-child(4) { animation-delay: 1.05s; }
 
+    /* ===== Envelope ===== */
+
+    .letter-section{
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .envelope{
+      position: relative;
+      width: 160px;
+      height: 110px;
+      cursor: pointer;
+      transition: transform .3s ease;
+    }
+
+    .envelope:hover{
+      transform: scale(1.05);
+    }
+
+    .envelope-body{
+      position: absolute;
+      inset: 0;
+      background: #ffc0da;
+      border-radius: 8px;
+      box-shadow: 0 8px 18px rgba(0,0,0,.2);
+    }
+
+    .envelope-flap{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 55px;
+      background: #ff99c8;
+      clip-path: polygon(0 0, 50% 100%, 100% 0);
+      transition: transform .6s ease;
+      transform-origin: top;
+      z-index: 2;
+    }
+
+    .envelope.open .envelope-flap{
+      transform: rotateX(180deg);
+    }
+
+    /* ===== Letter paper ===== */
+
+    .letter-paper{
+      margin-top: 20px;
+      width: min(500px, 95%);
+      background: linear-gradient(145deg,#ffe6f2,#fff7fb);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 12px 28px rgba(158,72,115,.25);
+      animation: letterAppear .6s ease forwards;
+    }
+
+    .letter-content{
+      text-align: center;
+      color: #5a2b3e;
+    }
+
+    .letter-content h3{
+      margin-top: 0;
+      font-size: 1.6rem;
+    }
+
+    @keyframes letterAppear{
+      from{
+        opacity:0;
+        transform: translateY(20px) scale(.95);
+      }
+      to{
+        opacity:1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
 .cats-wrap-4{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -550,12 +629,34 @@
 
   <section id="celebrateScreen" class="screen celebrate hidden" aria-live="polite">
     <h2>УРАААА Я ТАК СЧАСТЛИВ &lt;3</h2>
-<div class="cats-wrap cats-wrap-4">
-  <img class="js-fallback" src="assets/cat1.png" data-fallback="Cat 1" alt="Cat 1" />
-  <img class="js-fallback" src="assets/cat2.png" data-fallback="Cat 2" alt="Cat 2" />
-  <img class="js-fallback" src="assets/cat3.png" data-fallback="Cat 3" alt="Cat 3" />
-  <img class="js-fallback" src="assets/cat4.png" data-fallback="Cat 4" alt="Cat 4" />
-</div>
+    <div class="cats-wrap cats-wrap-4">
+      <img class="js-fallback" src="assets/cat1.png" data-fallback="Cat 1" alt="Cat 1" />
+      <img class="js-fallback" src="assets/cat2.png" data-fallback="Cat 2" alt="Cat 2" />
+      <img class="js-fallback" src="assets/cat3.png" data-fallback="Cat 3" alt="Cat 3" />
+      <img class="js-fallback" src="assets/cat4.png" data-fallback="Cat 4" alt="Cat 4" />
+    </div>
+    <div class="letter-section">
+      <div id="envelope" class="envelope">
+        <div class="envelope-flap"></div>
+        <div class="envelope-body"></div>
+      </div>
+
+      <div id="letterPaper" class="letter-paper hidden">
+        <div class="letter-content">
+          <h3>My Love 💗</h3>
+          <p>
+            Ты делаешь мою жизнь ярче, теплее и счастливее.
+            Спасибо тебе за твою улыбку, за твою нежность
+            и за то, что ты просто есть.
+          </p>
+          <p>
+            Я хочу держать тебя за руку,
+            смеяться с тобой и быть рядом всегда.
+          </p>
+          <p>С любовью, твой самый счастливый человек 💌</p>
+        </div>
+      </div>
+    </div>
 
   </section>
 
@@ -725,6 +826,17 @@
         card.classList.toggle("flipped");
       });
     });
+
+    const envelope = document.getElementById("envelope");
+    const letterPaper = document.getElementById("letterPaper");
+
+    if(envelope){
+      envelope.addEventListener("click", () => {
+        envelope.classList.toggle("open");
+        letterPaper.classList.toggle("hidden");
+      });
+    }
+
   </script>
 </body>
 </html>
